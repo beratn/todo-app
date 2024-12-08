@@ -96,6 +96,33 @@ The application will be available at:
 - Frontend: `http://localhost:3000`
 - Backend: `http://localhost:8080`
 
+### Pushing to Docker Hub
+
+1. Log in to Docker Hub:
+```bash
+docker login
+```
+
+2. Tag the images:
+```bash
+docker tag todo-app YOUR_DOCKERHUB_USERNAME/todo-app:latest
+```
+
+3. Push the images to Docker Hub:
+```bash
+docker push YOUR_DOCKERHUB_USERNAME/todo-app:latest
+```
+
+To pull and run the images from Docker Hub:
+```bash
+docker pull YOUR_DOCKERHUB_USERNAME/todo-app:latest
+```
+
+To run
+```bash
+docker run -p 3000:3000 -p 8091-8094:8091-8094 -p 8080:8080 -p 11210:11210 YOUR_DOCKERHUB_USERNAME/todo-app:latest
+```
+
 ## Features
 
 - User Authentication (Register/Login)
